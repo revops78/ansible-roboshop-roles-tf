@@ -1,0 +1,5 @@
+cart_host: "cart.chinni.fun"
+
+user_host: "user.chinni.fun"
+
+rabbitmq_host: "rabbitmq.chinni.fun"

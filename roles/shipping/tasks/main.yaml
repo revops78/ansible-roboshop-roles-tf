@@ -1,0 +1,59 @@
+
+
+- name: app setup
+  include_role:
+    name: common
+    tasks_from: app-setup
+
+- name: installing maven to the system
+  ansible.builtin.dnf:  
+    name: maven
+    state:  installed
+
+
+- name: Install maven dependies
+  ansible.builtin.command:  mvn clean package
+  args:
+    chdir: /app
+
+- name: renaming the file
+  ansible.builtin.command:  mv target/shipping-1.0.jar shipping.jar 
+  args:
+    chdir: /app
+
+- name: installing systemd
+  include_role:
+    name: common
+    tasks_from: systemd.yaml
+
+- name: installing mysql to the system
+  ansible.builtin.dnf:  
+    name: mysql
+    state:  installed
+
+
+- name: Load schema into MySQL
+  ansible.builtin.shell: >
+    mysql -h {{ mysql_host }} -uroot -p{{ mysql_root_password }} < /app/db/schema.sql
+  args:
+    executable: /bin/bash
+
+- name: Create app user in MySQL
+  ansible.builtin.shell: >
+    mysql -h {{ mysql_host }} -uroot -p{{ mysql_root_password }} < /app/db/app-user.sql
+  args:
+    executable: /bin/bash
+
+- name: Load master data into MySQL
+  ansible.builtin.shell: >
+    mysql -h {{ mysql_host }} -uroot -p{{ mysql_root_password }} < /app/db/master-data.sql
+  args:
+    executable: /bin/bash
+
+- name: Restart shipping service
+  ansible.builtin.systemd:
+    name: shipping
+    state: restarted
+    enabled: yes
+
+

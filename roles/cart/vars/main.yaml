@@ -1,0 +1,8 @@
+
+REDIS_HOST: redis.chinni.fun
+
+
+MONGODB_HOST: mongodb.chinni.fun
+
+
+CATALOGUE_HOST: catalogue.chinni.fun
