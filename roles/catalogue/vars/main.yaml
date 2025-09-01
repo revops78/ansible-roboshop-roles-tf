@@ -1,2 +1,2 @@
-MONGODB_HOST: "mongodb-{{ env }}.chinni.fun"
+MONGODB_HOST: "mongodb-{{ env | default('dev') }}.chinni.fun"
 
