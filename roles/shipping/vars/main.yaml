@@ -1,13 +1,13 @@
-mysql_host: "mysql.chinni.fun"    
+mysql_host: "mysql.backend-{{env}}.chinni.fun"    
 
 mysql_root_password: "RoboShop@1"
 
 
-REDIS_HOST: redis.chinni.fun
+REDIS_HOST: redis.backend-{{env}}.chinni.fun
 
-MONGODB_HOST: mongodb.chinni.fun
+MONGODB_HOST: mongodb.backend-{{env}}.chinni.fun
 
 
-CART_HOST: cart.chinni.fun
+CART_HOST: cart.backend-{{env}}.chinni.fun
 
-MYSQL_HOST: mysql.chinni.fun
+MYSQL_HOST: mysql-{{ env }}.chinni.fun

@@ -1,8 +1,8 @@
 
-REDIS_HOST: redis.chinni.fun
+REDIS_HOST: redis - {{ env }}.chinni.fun
 
 
-MONGODB_HOST: mongodb.chinni.fun
+MONGODB_HOST: mongodb - {{ env }}.chinni.fun
 
 
-CATALOGUE_HOST: catalogue.chinni.fun
+CATALOGUE_HOST: catalogue.backend - {{ env }}.chinni.fun
