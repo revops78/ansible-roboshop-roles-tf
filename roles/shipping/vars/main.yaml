@@ -10,4 +10,4 @@ MONGODB_HOST: mongodb-{{env}}.chinni.fun
 
 CART_HOST: cart.backend-{{env}}.chinni.fun
 
-mysql_host: mysql-{{ env }}.chinni.fun
+MYSQL_HOST: mysql-{{ env }}.chinni.fun
