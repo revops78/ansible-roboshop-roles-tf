@@ -9,5 +9,5 @@ CART_HOST: cart.backend-{{env}}chinni.fun
 
 SHIPPING_HOST: shipping.backend-{{env}}chinni.fun
 
-
+PAYMENT_HOST: payment.backend-{{ env }}.chinni.fun
 
