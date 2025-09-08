@@ -4,10 +4,10 @@ CATALOGUE_HOST: catalogue.backend-{{ env }}.chinni.fun
 USER_HOST: user.backend-{{env}}.chinni.fun
 
 
-CART_HOST: cart.backend-{{env}}chinni.fun
+CART_HOST: cart.backend-{{env}}.chinni.fun
 
 
-SHIPPING_HOST: shipping.backend-{{env}}chinni.fun
+SHIPPING_HOST: shipping.backend-{{env}}.chinni.fun
 
 PAYMENT_HOST: payment.backend-{{ env }}.chinni.fun
 
