@@ -3,9 +3,9 @@
 mysql_root_password: "RoboShop@1"
 
 
-REDIS_HOST: redis.backend-{{env}}.chinni.fun
+REDIS_HOST: redis-{{env}}.chinni.fun
 
-MONGODB_HOST: mongodb.backend-{{env}}.chinni.fun
+MONGODB_HOST: mongodb-{{env}}.chinni.fun
 
 
 CART_HOST: cart.backend-{{env}}.chinni.fun
