@@ -1,5 +1,5 @@
-cart_host: "cart.chinni.fun"
+cart_host: "cart.backend-{{ env }}.chinni.fun"
 
-user_host: "user.chinni.fun"
+user_host: "user.backend-{{ env }}chinni.fun"
 
-rabbitmq_host: "rabbitmq.chinni.fun"
+rabbitmq_host: "rabbitmq.backend-{{ env }}chinni.fun"
