@@ -1,23 +1,14 @@
-
 - name: app setup
   include_role:
     name: common
     tasks_from: app-setup
 
-- name: Install Python 3 and development tools
-  ansible.builtin.package:
-    name:
-      - python3
-      - gcc
-      - python3-devel
-    state: present
-
-- name: Install Python dependencies for payment service
-  ansible.builtin.command: pip3 install -r requirements.txt
-  args:
-    chdir: /app
-
-- name: installing systemd
+- name: python setup
   include_role:
     name: common
-    tasks_from: systemd.yaml
+    tasks_from: python
+
+- name: systemd setup
+  include_role:
+    name: common
+    tasks_from: systemd
