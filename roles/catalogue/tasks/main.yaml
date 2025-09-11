@@ -20,7 +20,7 @@
 
 
 - name: load products
-  ansible.builtin.shell: "mongosh --host  {{ MONGODB_HOST }} < /app/db/master-data.js"
+  ansible.builtin.shell: "mongosh --host {{ MONGODB_HOST }} < /app/db/master-data.js"
 
 
 - name: installing systemd
