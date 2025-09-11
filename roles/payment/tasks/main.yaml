@@ -8,7 +8,25 @@
     name: common
     tasks_from: python
 
-- name: systemd setup
-  include_role:
-    name: common
-    tasks_from: systemd
+- name: Copy payment systemd service
+  template:
+    src: payment.service.j2
+    dest: /etc/systemd/system/payment.service
+  notify:
+    - restart payment
+
+- name: Reload systemd
+  systemd:
+    daemon_reload: true
+
+- name: Start and enable payment service
+  service:
+    name: payment
+    state: restarted
+    enabled: yes
+
+  # Handlers
+- name: restart payment
+  service:
+    name: payment
+    state: restarted
